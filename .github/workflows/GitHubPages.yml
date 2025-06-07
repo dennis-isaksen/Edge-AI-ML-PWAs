@@ -46,12 +46,25 @@ jobs:
         run:  |
           cd pwa
           wasm-pack build --target web --out-dir pkg
+          cd ..
+
+      # Debugging steps to list contents after build
+      - name: List pwa contents
+        run: ls -l pwa
+      - name: List pkg contents
+        run: ls -l pwa/pkg
 
       - name: Copy landing page to output
         run: |
           mkdir -p dist
           cp index.html dist/index.html
           cp -r pwa dist/pwa
+
+      # Debugging steps to list contents after copy
+      - name: List dist contents
+        run: ls -l dist/pwa
+      - name: List dist/pkg contents
+        run: ls -l dist/pwa/pkg
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
