@@ -48,21 +48,15 @@ jobs:
           wasm-pack build --target web --out-dir pkg
           cd ..
 
-      # Debugging steps to list contents after build
-      - name: List pwa contents
-        run: ls -l pwa
-      - name: List pkg contents
-        run: ls -l pwa/pkg
-
       - name: Copy landing page to output
         run: |
           mkdir -p dist
           cp index.html dist/index.html
           cp -r pwa dist/pwa
 
-      # Debugging steps to list contents after copy
-      - name: List all files in dist
-        run: find dist
+      # Remove .gitignore from pkg before deploy
+      - name: Remove .gitignore from pkg before deploy
+        run: rm -f dist/pwa/pkg/.gitignore
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
