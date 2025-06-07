@@ -61,13 +61,12 @@ jobs:
           cp -r pwa dist/pwa
 
       # Debugging steps to list contents after copy
-      - name: List dist contents
-        run: ls -l dist/pwa
-      - name: List dist/pkg contents
-        run: ls -l dist/pwa/pkg
+      - name: List all files in dist
+        run: find dist
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
+          force_orphan: true
