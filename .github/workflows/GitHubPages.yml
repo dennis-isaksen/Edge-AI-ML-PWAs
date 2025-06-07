@@ -3,9 +3,8 @@ name: GitHub Pages CI/CD
 on:
   push:
     branches:
-      - main
+      - feature/github_pages
   pull_request:
-    types: [opened, synchronize, reopened, closed]
     branches:
       - main
 
