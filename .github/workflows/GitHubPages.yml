@@ -45,7 +45,7 @@ jobs:
       - name: Build with wasm-pack
         run:  |
           cd pwa
-          wasm-pack build --target web
+          wasm-pack build --target web --out-dir pkg
 
       - name: Copy landing page to output
         run: |
