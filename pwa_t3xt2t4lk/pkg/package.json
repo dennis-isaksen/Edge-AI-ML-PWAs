@@ -1,0 +1,24 @@
+{
+  "name": "t3xt2t4lk",
+  "type": "module",
+  "collaborators": [
+    "Dennis Amdi Skov Isaksen <dennis.isaksen@gmail.com>"
+  ],
+  "description": "A simple OCR app to read aloud text",
+  "version": "0.1.0",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dennis-isaksen/Edge-AI-ML-PWAs"
+  },
+  "files": [
+    "t3xt2t4lk_bg.wasm",
+    "t3xt2t4lk.js",
+    "t3xt2t4lk.d.ts"
+  ],
+  "main": "t3xt2t4lk.js",
+  "types": "t3xt2t4lk.d.ts",
+  "sideEffects": [
+    "./snippets/*"
+  ]
+}
